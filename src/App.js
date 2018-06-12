@@ -36,13 +36,21 @@ class App extends Component {
       return (
         <div className="App">
 
-          <ul>
-            {items.map(item => (
-              <li key={item.id}>
-                Name: {item.name} | Email: {item.email}
-              </li>
-            ))};
-          </ul>
+          <table>
+            <tbody>
+              <tr>
+                {items.map(item => (
+                  <td key={item.id}>
+                    Name: {item.name}
+
+                    <td key={item.id}>
+                      Email: {item.email}
+                    </td>
+                  </td>
+                ))};
+              </tr>
+            </tbody>
+          </table>
 
 
 
