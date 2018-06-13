@@ -3,19 +3,3 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
-table {
-  color: #fff;
-  background-color: #000;
-}
-tbody {
-  max-width: 50%;
-}
-
-tr {
-  border: 1px solid #fff;
-}
-
-td {
-  border: 1px solid #fff;
-}
