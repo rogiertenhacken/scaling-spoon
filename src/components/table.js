@@ -3,17 +3,50 @@ import '../App.css';
 import { Table, TableHeader } from 'react-mdl';
 
 class TablePage extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        items: [],
+        isLoaded: false
+      }
+  }
+
+  componentDidMount() {
+
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(json => {
+          console.log(json);
+          this.setState({
+            isLoaded: true,
+            items: json,
+          })
+          console.log(this.state.items);
+        });
+      }
+
+
+
+
   render() {
+
+    let { isLoaded, items } = this.state;
+
+    if (!isLoaded) {
+      return <div>Loading...</div>;
+    }
+
+    else {
+
     return(
     <div className="App">
-      <h1>table page</h1>
-
       <Table
         sortable
         shadow={0}
         rows={[
-          {winners: 'Acrylic (Transparent)', quantity: 25, price: 2.90},
-          {winners: 'Plywood (Birch)', quantity: 50, price: 1.25},
+          {winners: '{item.name}', quantity: 25, price: 2.90},
+          {winners: '{item.name}', quantity: 50, price: 1.25},
           {winners: 'Laminate (Gold on Blue)', quantity: 10, price: 2.35},
           {winners: 'Laminate (Gold)', quantity: 10, price: 2.35},
           {winners: 'Laminate (Gold on Silver)', quantity: 10, price: 2.35}
@@ -29,7 +62,7 @@ class TablePage extends Component {
         <TableHeader
           numeric
           name="quantity"
-          tooltip="Number of winnerss"
+          tooltip="Number of winners"
         >
           YEAR
         </TableHeader>
@@ -42,9 +75,8 @@ class TablePage extends Component {
           CAR
         </TableHeader>
       </Table>
-
     </div>
-    )
+  )}
   }
 }
 

@@ -24,7 +24,6 @@ class Landing extends Component {
             {/* <Champions /> */}
             <Table />
           </Cell>
-
         </Grid>
       </div>
     )

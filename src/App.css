@@ -31,10 +31,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* tr {
-  padding: 50px;
-} */
-
 .header-color {
   background: #0F2027;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
@@ -55,13 +51,13 @@
   height: 100%;
 }
 
-.race-img {
+/* .race-img {
   width: auto;
   height: 50%;
   border-radius: 15px;
   padding-top: 5em;
   margin: auto;
-}
+} */
 
 .banner-text {
   background-color: #000;
@@ -91,7 +87,7 @@ table {
   opacity: .9;
   width: 90%;
   height: 200px;
-  margin: 10em auto;
+  margin: 15em auto;
   /* padding: 20px; */
   border-radius: 10px;
 }
