@@ -14,7 +14,7 @@ class TablePage extends Component {
 
   componentDidMount() {
 
-      fetch("https://jsonplaceholder.typicode.com/users")
+      fetch("http://ergast.com/api/f1/2005/driverstandings/1.json")
         .then(response => response.json())
         .then(json => {
           console.log(json);
@@ -26,30 +26,29 @@ class TablePage extends Component {
         });
       }
 
-
-
-
   render() {
 
     let { isLoaded, items } = this.state;
 
+    // while loading it shows:
     if (!isLoaded) {
       return <div>Loading...</div>;
     }
 
     else {
 
+    // this table comes from the react-mdl library
     return(
     <div className="App">
       <Table
         sortable
         shadow={0}
         rows={[
-          {winners: '{item.name}', quantity: 25, price: 2.90},
-          {winners: '{item.name}', quantity: 50, price: 1.25},
-          {winners: 'Laminate (Gold on Blue)', quantity: 10, price: 2.35},
-          {winners: 'Laminate (Gold)', quantity: 10, price: 2.35},
-          {winners: 'Laminate (Gold on Silver)', quantity: 10, price: 2.35}
+          {winners: '{value.MRData.StandingsTable.season}', year: 0, car: 1},
+          {winners: '{item.MRData.series}', year: 0, car: 1},
+          {winners: 'Laminate (Gold on Blue)', year: 0, car: 2},
+          {winners: 'Laminate (Gold)', year: 0, car: 1},
+          {winners: 'Laminate (Gold on Silver)', year: 0, car: 1}
         ]}
       >
         <TableHeader
@@ -60,19 +59,19 @@ class TablePage extends Component {
           WINNERS
         </TableHeader>
         <TableHeader
-          numeric
-          name="quantity"
-          tooltip="Number of winners"
+          // numeric
+          // name="year"
+          // tooltip="Number of winners"
         >
           YEAR
         </TableHeader>
         <TableHeader
-          numeric
-          name="price"
-          cellFormatter={(price) => `\$${price.toFixed(2)}`}
-          tooltip="Price pet unit"
+          // numeric
+          // name="car"
+          // cellFormatter={(car) => `\$${car.toFixed(2)}`}
+          // tooltip="car pet unit"
         >
-          CAR
+          year
         </TableHeader>
       </Table>
     </div>

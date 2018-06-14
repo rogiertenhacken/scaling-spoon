@@ -6,7 +6,7 @@ import Champions from './champions';
 const Main = () => (
   <Switch>
     <Route exact path="/" component={Landing}/>
-    <Route path="/champions" component={Champions}/>
+    <Route path="/champions" component={Champions }/>
   </Switch>
 )
 

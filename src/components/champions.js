@@ -10,11 +10,6 @@ class Champions extends Component {
       }
   }
 
-  // render() {
-  //   return(
-      // <div><h1>Champions Page</h1></div>
-      //https://jsonplaceholder.typicode.com/users
-      //http://ergast.com/api/f1/2005/driverstandings/1.json
       componentDidMount() {
 
           fetch("https://jsonplaceholder.typicode.com/users")
@@ -41,8 +36,8 @@ class Champions extends Component {
 
             return (
               <div className="App">
-                <table>
-                  <tbody>
+                <table className="championsTable">
+                  <tbody className="championsTable">
                     <th>
                       <tr>
                         <td>results</td>
@@ -59,7 +54,6 @@ class Champions extends Component {
                 </table>
               </div>
             )}
-          // }
   }
 }
 
