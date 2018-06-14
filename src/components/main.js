@@ -4,10 +4,10 @@ import Landing from './landingpage';
 import Champions from './champions';
 
 const Main = () => (
-  <Switch>
-    <Route exact path="/" component={Landing}/>
-    <Route path="/champions" component={Champions }/>
-  </Switch>
+<Switch>
+  <Route exact path="/" component={Landing}/>
+  <Route path="/champions" component={Champions }/>
+</Switch>
 )
 
 
