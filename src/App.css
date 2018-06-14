@@ -42,13 +42,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: .9;
+  opacity: .7;
   text-align: center;
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .banner-text {
@@ -60,12 +60,12 @@
   border-radius: 10px;
 }
 
-.banner-text h1 {
+/* .banner-text h1 {
   font-size: 42px;
   font-weight: bold;
   color: #fff;
   font-variant: small-caps;
-}
+} */
 
 table {
   color: #000;
@@ -74,7 +74,6 @@ table {
   width: 90%;
   height: 200px;
   margin: 15em auto;
-  /* padding: 20px; */
   border-radius: 10px;
 }
 

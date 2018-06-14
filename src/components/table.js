@@ -71,7 +71,7 @@ class TablePage extends Component {
           // cellFormatter={(car) => `\$${car.toFixed(2)}`}
           // tooltip="car pet unit"
         >
-          year
+          CAR
         </TableHeader>
       </Table>
     </div>
