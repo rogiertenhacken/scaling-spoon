@@ -10,8 +10,8 @@ class Landing extends Component {
         <Grid className='landing-grid'>
           <Cell col={12}>
             {/* <div className="banner-text">
-        <h1>f<span style={{fontSize: '34px'}}>1</span> world champions</h1>
-      </div> */}
+            <h1>f<span style={{fontSize: '34px'}}>1</span> world champions</h1>
+            </div> */}
             <Table />
           </Cell>
         </Grid>
