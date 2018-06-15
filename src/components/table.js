@@ -33,26 +33,28 @@ class TablePage extends Component {
       return (
         <div className='App'>
           <table id='t01'>
-            <tr>
-              <th>year</th>
-              <th>winner</th>
-              <th>team</th>
-            </tr>
-            <tr>
-              <td key={items.id}>{items.MRData.StandingsTable.season}</td>
-              <td>Dean</td>
-              <td>{items.MRData.series}</td>
-            </tr>
-            <tr>
-              <td>{items.MRData.StandingsTable.season}</td>
-              <td>Jackson</td>
-              <td>{items.MRData.series}</td>
-            </tr>
-            <tr>
-              <td>{items.MRData.StandingsTable.season}</td>
-              <td>Doe</td>
-              <td>{items.MRData.series}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th>year</th>
+                <th>winner</th>
+                <th>team</th>
+              </tr>
+              <tr>
+                <td key={items.id}>{items.MRData.StandingsTable.season}</td>
+                <td>Dean</td>
+                <td>{items.MRData.series}</td>
+              </tr>
+              <tr>
+                <td>{items.MRData.StandingsTable.season}</td>
+                <td>Jackson</td>
+                <td>{items.MRData.series}</td>
+              </tr>
+              <tr>
+                <td>{items.MRData.StandingsTable.season}</td>
+                <td>Doe</td>
+                <td>{items.MRData.series}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       )
