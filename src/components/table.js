@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { Table, TableHeader } from 'react-mdl'
+// import { Table, TableHeader } from 'react-mdl'
 
 class TablePage extends Component {
   constructor (props) {
@@ -46,43 +46,6 @@ class TablePage extends Component {
               </tr>
             </tbody>
           </table>
-
-          <Table
-            name='happy now'
-            sortable
-            shadow={0}
-            rows={[
-              {winners: '{items.MRData.StandingsTable.season}', year: 0, car: 1},
-              {winners: '{item.MRData.series}', year: 0, car: 1},
-              {winners: 'Laminate (Gold on Blue)', year: 0, car: 2},
-              {winners: 'Laminate (Gold)', year: 0, car: 1},
-              {winners: 'Laminate (Gold on Silver)', year: 0, car: 1}
-            ]}
-          >
-            <TableHeader
-              name='winners'
-              sortFn={(a, b, isAsc) => (isAsc ? a : b).match(/\((.*)\)/)[1].localeCompare((isAsc ? b : a).match(/\((.*)\)/)[1])}
-              tooltip='The amazing winners name'
-            >
-          WINNERS
-            </TableHeader>
-            <TableHeader
-              numeric
-              name='year'
-              tooltip='Number of winners'
-            >
-          YEAR
-            </TableHeader>
-            <TableHeader
-              numeric
-              name='car'
-              cellFormatter={(car) => `$${car.toFixed(2)}`}
-              tooltip='car pet unit'
-            >
-          CAR
-            </TableHeader>
-          </Table>
-
         </div>
       )
     }
@@ -90,3 +53,39 @@ class TablePage extends Component {
 }
 
 export default TablePage
+
+// <Table
+//   name='happy now'
+//   sortable
+//   shadow={0}
+//   rows={[
+//     {winners: '{items.MRData.StandingsTable.season}', year: 0, car: 1},
+//     {winners: '{item.MRData.series}', year: 0, car: 1},
+//     {winners: 'Laminate (Gold on Blue)', year: 0, car: 2},
+//     {winners: 'Laminate (Gold)', year: 0, car: 1},
+//     {winners: 'Laminate (Gold on Silver)', year: 0, car: 1}
+//   ]}
+// >
+//   <TableHeader
+//     name='winners'
+//     sortFn={(a, b, isAsc) => (isAsc ? a : b).match(/\((.*)\)/)[1].localeCompare((isAsc ? b : a).match(/\((.*)\)/)[1])}
+//     tooltip='The amazing winners name'
+//   >
+// WINNERS
+//   </TableHeader>
+//   <TableHeader
+//     numeric
+//     name='year'
+//     tooltip='Number of winners'
+//   >
+// YEAR
+//   </TableHeader>
+//   <TableHeader
+//     numeric
+//     name='car'
+//     cellFormatter={(car) => `$${car.toFixed(2)}`}
+//     tooltip='car pet unit'
+//   >
+// CAR
+//   </TableHeader>
+// </Table>
