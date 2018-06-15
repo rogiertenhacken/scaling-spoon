@@ -48,17 +48,55 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
-.banner-text {
+table {
+    width: 85%;
+    margin: 18em auto;
+    opacity: .9;
+}
+
+table, th, td {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+
+table#t01 tr:hover {
+   background-color: #0F2027;
+   color: #fff;
+}
+
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+/* .banner-text {
   background-color: #000;
   opacity: .8;
   width: 35%;
   margin: 7em 6em;
-  /* margin: auto; */
+  margin: auto;
   border-radius: 10px;
-}
+} */
 
 /* .banner-text h1 {
   font-size: 42px;
@@ -77,40 +115,17 @@
   border-radius: 10px;
 } */
 
-.userTable {
+/* .userTable {
   color: #000;
   background-color: #fff;
-  /* opacity: .9; */
+  opacity: .9;
   width: 90%;
-  /* height: 200px; */
+  height: 200px;
   margin: 15em auto;
   border: 1px solid #000;
   border-radius: 10px;
-}
+} */
 
-.championsTable td {
+/* .championsTable td {
   border: 1px solid #fff;
-}
-
-table {
-    width: 90%;
-    margin: 15em auto;
-}
-table, th, td {
-    /* border: 1px solid black; */
-    border-collapse: collapse;
-}
-th, td {
-    padding: 15px;
-    text-align: left;
-}
-table#t01 tr:nth-child(even) {
-    background-color: #eee;
-}
-table#t01 tr:nth-child(odd) {
-   background-color: #fff;
-}
-table#t01 th {
-    background-color: black;
-    color: white;
-}
+} */
