@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Grid, Cell } from 'react-mdl'
-// import Champions from './champions'
 import Table from './table'
 
 class Landing extends Component {
