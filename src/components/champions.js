@@ -18,7 +18,7 @@ class Champions extends Component {
           isLoaded: true,
           items: json
         })
-        console.log(this.state.items)
+        // console.log(this.state.items)
       })
   }
 
