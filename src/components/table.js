@@ -32,19 +32,27 @@ class TablePage extends Component {
       // this table comes from the react-mdl library
       return (
         <div className='App'>
-          <table className='userTable'>
-            <tbody className='userTable'>
-              <th>
-                <tr>
-                  <td>results</td>
-                </tr>
-              </th>
-              <tr>
-                <td key={items.id}>
-            Name: {items.MRData.StandingsTable.season} | Email: {items.MRData.series}
-                </td>
-              </tr>
-            </tbody>
+          <table id='t01'>
+            <tr>
+              <th>year</th>
+              <th>winner</th>
+              <th>team</th>
+            </tr>
+            <tr>
+              <td key={items.id}>{items.MRData.StandingsTable.season}</td>
+              <td>Dean</td>
+              <td>{items.MRData.series}</td>
+            </tr>
+            <tr>
+              <td>{items.MRData.StandingsTable.season}</td>
+              <td>Jackson</td>
+              <td>{items.MRData.series}</td>
+            </tr>
+            <tr>
+              <td>{items.MRData.StandingsTable.season}</td>
+              <td>Doe</td>
+              <td>{items.MRData.series}</td>
+            </tr>
           </table>
         </div>
       )
@@ -89,3 +97,18 @@ export default TablePage
 // CAR
 //   </TableHeader>
 // </Table>
+
+// <table className='userTable'>
+//   <tbody className='userTable'>
+//     <th>
+//       <tr>
+//         <td>results</td>
+//       </tr>
+//     </th>
+//     <tr>
+//       <td key={items.id}>
+//   Name: {items.MRData.StandingsTable.season} | Email: {items.MRData.series}
+//       </td>
+//     </tr>
+//   </tbody>
+// </table>
