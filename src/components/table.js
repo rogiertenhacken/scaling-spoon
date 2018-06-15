@@ -9,7 +9,7 @@ class TablePage extends Component {
       isLoaded: false
     }
   }
-
+  // here the api-call is made:
   componentDidMount () {
     fetch('http://ergast.com/api/f1/2005/driverstandings/1.json')
       .then(response => response.json())
@@ -21,7 +21,7 @@ class TablePage extends Component {
         })
       })
   }
-
+  // render-function mounts the component in the browser:
   render () {
     let { isLoaded, items } = this.state
     // while loading it shows:
