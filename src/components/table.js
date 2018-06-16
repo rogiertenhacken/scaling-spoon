@@ -10,8 +10,6 @@ class TablePage extends Component {
     }
   }
 
-  // https://stackoverflow.com/questions/47189736/how-to-fetch-data-from-multiple-urls-and-save-it-in-an-array-react-native#comment81388749_47207043
-
   // here the api-call is made:
   componentDidMount () {
     fetch('http://ergast.com/api/f1/2005/driverstandings/1.json')

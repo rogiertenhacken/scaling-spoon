@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Cell } from 'react-mdl'
-import Table from './table'
+// import Table from './table'
+import DataTable from './datatable'
 
 class Landing extends Component {
   render () {
@@ -11,7 +12,7 @@ class Landing extends Component {
             {/* <div className="banner-text">
             <h1>f<span style={{fontSize: '34px'}}>1</span> world champions</h1>
             </div> */}
-            <Table />
+            <DataTable />
           </Cell>
         </Grid>
       </div>
