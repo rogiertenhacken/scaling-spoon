@@ -11,26 +11,40 @@ class DataTable extends Component {
   }
   // set array of urls:
   componentDidMount () {
-    let URLS = [
-      'http://ergast.com/api/f1/2005/driverstandings/1.json',
-      'http://ergast.com/api/f1/2006/driverstandings/1.json',
-      'http://ergast.com/api/f1/2007/driverstandings/1.json'
-    ]
+    // let URLS = [
+    //   'http://ergast.com/api/f1/2005/driverstandings/1.json',
+    //   'http://ergast.com/api/f1/2006/driverstandings/1.json',
+    //   'http://ergast.com/api/f1/2007/driverstandings/1.json'
+    // ]
+    //
+    // console.log(URLS)
+    // fetch(URLS)
+    // return (Promise.all(
+    //   URLS.map(url =>
+    //     fetch(url)
+    //       .then(response => response.json())
+    //       .then(json => {
+    //         this.setState({
+    //           isLoaded: true,
+    //           items: json
+    //         })
+    //       })
+    //   )
+    // ))
 
-    console.log(URLS)
-    fetch(URLS)
-    return (Promise.all(
-      URLS.map(url =>
-        fetch(url)
-          .then(response => response.json())
-          .then(json => {
-            this.setState({
-              isLoaded: true,
-              items: json
-            })
-          })
-      )
-    ))
+    const years = [ '2005', '2006', '2007' ]
+
+    years.forEach(year => {
+      fetch(`http://ergast.com/api/f1/${year}/driverstandings/1.json`)
+        .then(response => response.json())
+        .then(json => {
+          const newStandings = {
+            ...this.state.standings
+          }
+          newStandings[year] = json
+          this.setState({ standings: newStandings })
+        })
+    })
   }
 
   //   fetch(URLS)

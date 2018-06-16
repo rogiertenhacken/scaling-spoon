@@ -13,6 +13,7 @@ class App extends Component {
             <Navigation>
               <Link to='/'>Home</Link>
               <Link to='/champions'>Champions</Link>
+              <Link to='./components/datatable'>Winners</Link>
               {/* <Link to="/table">Table</Link> */}
             </Navigation>
           </Header>
@@ -20,6 +21,7 @@ class App extends Component {
             <Navigation>
               <Link to='/'>Home</Link>
               <Link to='/champions'>Champions</Link>
+              <Link to='/datatable'>Winners</Link>
               {/* <Link to="/table">Table</Link> */}
             </Navigation>
           </Drawer>
