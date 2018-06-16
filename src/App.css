@@ -1,26 +1,15 @@
-/* :root {
+:root {
   --off-white-txt-color: #f3f3f3;
   --black-txt-color: #000;
   --light-grey-color: #d3d3d3;
-} */
-
-.App {
-  text-align: left;
+  --table-color-bg-even: #eee;
+  --table-color-bg-odd: #fff;
+  --table-color-bg-hover: #0F2027;
+  --table-header-color: #000;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.highlight {
+  background-color: yellow !important;
 }
 
 .header-color {
@@ -29,12 +18,22 @@
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+h1 {
+  font-size: 2.6em !important;
+  font-variant: small-caps;
+  color: var(--off-white-txt-color);
+  padding-left: 3% !important;
+  padding-top: 1% !important;
+  margin: 0 !important;
+  height: 65px;
+}
+
 .landing-grid {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/20/Hamilton_-_2016_Monaco_GP_02.jpg);
+  background-image: url('./img/Hamilton_-_2016_Monaco_GP_02.jpg');   /* royalty free image search google, downloaded from https://upload.wikimedia.org/wikipedia/commons/2/20/Hamilton_-_2016_Monaco_GP_02.jpg); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: .7;
+  opacity: .8;
   text-align: center;
   position: relative;
   top: 0;
@@ -44,57 +43,55 @@
 }
 
 table {
-    width: 85%;
-    margin: 18em auto;
-    opacity: .9;
+  width: 85%;
+  margin: 18em auto;
+  opacity: .9;
 }
 
 table, th, td {
-    /* border: 1px solid black; */
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 th, td {
-    padding: 10px;
-    text-align: left;
+  padding: 10px;
+  text-align: left;
 }
 
 table#t01 tr:nth-child(even) {
-    background-color: #eee;
+  background-color: var(--table-color-bg-even);
 }
 
 table#t01 tr:nth-child(odd) {
-   background-color: #fff;
+  background-color: var(--table-color-bg-odd);
 }
 
 table#t01 tr:hover {
-   background-color: #0F2027;
-   color: #fff;
+  background-color: var(--table-color-bg-hover);
+  color: var(--off-white-txt-color);
 }
 
 table#t01 th {
-    background-color: black;
-    color: white;
+  background-color: var(--table-header-color);
+  color: var(--off-white-txt-color);
 }
 
-
-
-
-
-/* .banner-text {
-  background-color: #000;
-  opacity: .8;
-  width: 35%;
-  margin: 7em 6em;
-  margin: auto;
-  border-radius: 10px;
+/* .App {
+  text-align: left;
 } */
 
-/* .banner-text h1 {
-  font-size: 42px;
-  font-weight: bold;
-  color: #fff;
-  font-variant: small-caps;
+/* .App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+} */
+
+/* .App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
 } */
 
 /* table {
@@ -105,19 +102,4 @@ table#t01 th {
   height: 200px;
   margin: 15em auto;
   border-radius: 10px;
-} */
-
-/* .userTable {
-  color: #000;
-  background-color: #fff;
-  opacity: .9;
-  width: 90%;
-  height: 200px;
-  margin: 15em auto;
-  border: 1px solid #000;
-  border-radius: 10px;
-} */
-
-/* .championsTable td {
-  border: 1px solid #fff;
 } */

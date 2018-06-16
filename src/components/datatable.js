@@ -1,95 +1,94 @@
 import React, { Component } from 'react'
 import '../App.css'
+import SeasonDetailsTable from './SeasonDetailsTable'
+import Winner from './Winner'
 
 class DataTable extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      items: [],
-      isLoaded: false
+      standings: null,
+      showSeasonDetailsFor: {
+        season: null,
+        winner: null,
+      }
     }
   }
   // set array of urls:
   componentDidMount () {
-    // let URLS = [
-    //   'http://ergast.com/api/f1/2005/driverstandings/1.json',
-    //   'http://ergast.com/api/f1/2006/driverstandings/1.json',
-    //   'http://ergast.com/api/f1/2007/driverstandings/1.json'
-    // ]
-    //
-    // console.log(URLS)
-    // fetch(URLS)
-    // return (Promise.all(
-    //   URLS.map(url =>
-    //     fetch(url)
-    //       .then(response => response.json())
-    //       .then(json => {
-    //         this.setState({
-    //           isLoaded: true,
-    //           items: json
-    //         })
-    //       })
-    //   )
-    // ))
+    // const years = ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+    const years = ['2005', '2006']
 
-    const years = [ '2005', '2006', '2007' ]
+    const standingPromises = years.map(year => Promise.resolve(fetch(`http://ergast.com/api/f1/${year}/driverStandings.json`)))
 
-    years.forEach(year => {
-      fetch(`http://ergast.com/api/f1/${year}/driverstandings/1.json`)
-        .then(response => response.json())
-        .then(json => {
-          const newStandings = {
-            ...this.state.standings
-          }
-          newStandings[year] = json
-          this.setState({ standings: newStandings })
-        })
-    })
+    Promise.all(standingPromises)
+      .then(standingsResponses => {
+        standingsResponses
+          .map(standingsResponse => standingsResponse.json())
+          .forEach(response => {
+            console.log('hello');
+            response.then(data => {
+              const seasonStandings = data.MRData.StandingsTable.StandingsLists[0]
+              this.setState((previousState) => {
+                const newStandings = {...previousState.standings}
+                newStandings[seasonStandings.season] = seasonStandings
+                return { standings: newStandings }
+              })
+            })
+          })
+      })
   }
 
-  //   fetch(URLS)
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         items: json
-  //       })
-  //     })
-  // }
+  showSeasonDetails = (season, winner) => {
+    console.log(winner);
+    this.setState({ showSeasonDetailsFor: { season, winner }})
+  }
 
+  renderSeasonsTable = (standings) => {
+    return (
+      <table id='t01'>
+        <tbody id='tb01'>
+          <tr>
+            <th>year</th>
+            <th>winner</th>
+            <th>team</th>
+          </tr>
+          {
+            Object.keys(standings).map(season => {
+              const driverName = standings[season].DriverStandings['0'].Driver.driverId
+              const teamName = standings[season].DriverStandings['0'].Constructors[0].constructorId
+              return (
+                <Winner
+                  key={season}
+                  wonEvent={season}
+                  driverName={driverName}
+                  teamName={teamName}
+                  showSeasonDetails={() => this.showSeasonDetails(season, driverName)}
+                />
+              )
+            })}
+        </tbody>
+      </table>
+    )
+  }
   // render-function mounts the component in the browser:
-  render () {
-    let { isLoaded, items } = this.state
+  render() {
+
+    let { standings, showSeasonDetailsFor } = this.state
     // while loading it shows:
-    if (!isLoaded) {
+    if (standings === null) {
       return <div>Loading...</div>
+    } else if( showSeasonDetailsFor.season !== null ) {
+      return <SeasonDetailsTable
+        season={showSeasonDetailsFor.season}
+        seasonWinner={showSeasonDetailsFor.winner}
+        goBack={() => this.showSeasonDetails(null, null)}
+      />
     } else {
+      console.log(this.state.standings);
       return (
         <div className='App'>
-          <table id='t01'>
-            <tbody id='tb01'>
-              <tr>
-                <th>year</th>
-                <th>winner</th>
-                <th>team</th>
-              </tr>
-              <tr>
-                <td key={items.id}>{items.MRData.StandingsTable.season}</td>
-                <td>Dean</td>
-                <td>{items.MRData.series}</td>
-              </tr>
-              <tr>
-                <td>{items.MRData.StandingsTable.season}</td>
-                <td>Jackson</td>
-                <td>{items.MRData.series}</td>
-              </tr>
-              <tr>
-                <td>{items.MRData.StandingsTable.season}</td>
-                <td>Doe</td>
-                <td>{items.MRData.series}</td>
-              </tr>
-            </tbody>
-          </table>
+          { this.renderSeasonsTable(standings) }
         </div>
       )
     }
