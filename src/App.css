@@ -97,6 +97,7 @@ table.t01 th {
 table.t01 tr.highlight:hover {
   color: var(--black-txt-color);
   border-left: 2px solid var(--header-green-color);
+  border-right: 2px solid var(--header-green-color);
 }
 
 .highlight {
