@@ -9,4 +9,5 @@ TODO
 - Global search for console.log -> remove
 - Make component out of SeasonTable
 - Implement switching between DataTable, SeasonTable and SeasonDetails using react router
-- What is een Promise, wat doet Promise.all
+- What is a Promise, what does Promise.all
+- Clean up img
