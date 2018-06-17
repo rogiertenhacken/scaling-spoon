@@ -46,8 +46,8 @@ class DataTable extends Component {
 
   renderSeasonsTable = (standings) => {
     return (
-      <table id='t01'>
-        <tbody id='tb01'>
+      <table className='t01'>
+        <tbody className='tb01'>
           <tr>
             <th>year</th>
             <th>winner</th>

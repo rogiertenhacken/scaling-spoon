@@ -22,8 +22,8 @@ class SeasonDetailsTable extends Component {
     if (races === null) return <h1>Loading</h1>
 
     return (
-      <table id='t01' onClick={this.props.goBack}>
-        <tbody id='tb01'>
+      <table className='t01' onClick={this.props.goBack}>
+        <tbody className='tb01'>
           <tr>
             <th>race</th>
             <th>winner</th>
@@ -31,13 +31,13 @@ class SeasonDetailsTable extends Component {
           </tr>
           { races.map(race => {
             const highlight = race.Results['0'].Driver.driverId === seasonWinner
-            let hightLightBackground = {}
+            let highLighBackground = {}
             if (highlight) {
-              hightLightBackground = {
+              highLighBackground = {
                 backgroundColor: 'yellow'
               }
             }
-            console.log(highlight);
+            console.log(highlight)
             return <Winner
               key={race.raceName}
               wonEvent={race.raceName}

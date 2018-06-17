@@ -6,10 +6,8 @@
   --table-color-bg-odd: #fff;
   --table-color-bg-hover: #0F2027;
   --table-header-color: #000;
-}
-
-.highlight {
-  background-color: yellow !important;
+  --header-green-color: #0F2027;
+  --highlight-yellow-color: #fff723;
 }
 
 .header-color {
@@ -57,49 +55,28 @@ th, td {
   text-align: left;
 }
 
-table#t01 tr:nth-child(even) {
+table.t01 tr:nth-child(even) {
   background-color: var(--table-color-bg-even);
 }
 
-table#t01 tr:nth-child(odd) {
+table.t01 tr:nth-child(odd) {
   background-color: var(--table-color-bg-odd);
 }
 
-table#t01 tr:hover {
+table.t01 tr:hover {
   background-color: var(--table-color-bg-hover);
   color: var(--off-white-txt-color);
 }
 
-table#t01 th {
+table.t01 th {
   background-color: var(--table-header-color);
   color: var(--off-white-txt-color);
 }
 
-/* .App {
-  text-align: left;
-} */
-
-/* .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-} */
-
-/* .App-title {
-  font-size: 1.5em;
+table.t01 tr.highlight:hover {
+  color: var(--light-grey-color);
 }
 
-.App-intro {
-  font-size: large;
-} */
-
-/* table {
-  color: #000;
-  background-color: #000;
-  opacity: .9;
-  width: 90%;
-  height: 200px;
-  margin: 15em auto;
-  border-radius: 10px;
-} */
+.highlight {
+  background-color: var(--highlight-yellow-color) !important;
+}
