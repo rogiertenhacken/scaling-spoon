@@ -83,7 +83,7 @@ class DataTable extends Component {
       />
     } else {
       return (
-        <div className='App'>
+        <div>
           { this.renderSeasonsTable(standings) }
         </div>
       )
