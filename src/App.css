@@ -6,32 +6,34 @@
   --table-color-bg-odd: #fff;
   --table-color-bg-hover: #0F2027;
   --table-header-color: #000;
-  --header-green-color: #0F2027;
   --highlight-yellow-color: #fff723;
+  --header-green-color: #0F2027;
+  --header-webkit-color: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  --header-linear-color: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .header-color {
-  background: #0F2027;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--header-green-color);  /* fallback for old browsers */
+  background: var(--header-color); /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--header-linear-color); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-h1 {
-  font-size: 2.6em !important;
+h1.title {
+  font-size: 2.6em;
   font-variant: small-caps;
   color: var(--off-white-txt-color);
-  padding-left: 3% !important;
-  padding-top: 1% !important;
-  margin: 0 !important;
+  padding-left: 3%;
+  padding-top: 1%;
+  margin: 0;
   height: 65px;
 }
 
 .landing-grid {
-  background-image: url('./img/Hamilton_-_2016_Monaco_GP_02.jpg');   /* royalty free image search google, downloaded from https://upload.wikimedia.org/wikipedia/commons/2/20/Hamilton_-_2016_Monaco_GP_02.jpg); */
+  background-image: url('./img/Hamilton_-_2016_Monaco_GP_02-white25.jpg');   /* royalty free image search google, downloaded from https://upload.wikimedia.org/wikipedia/commons/2/20/Hamilton_-_2016_Monaco_GP_02.jpg); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: .8;
+  opacity: 1;
   text-align: center;
   position: relative;
   top: 0;
@@ -43,7 +45,7 @@ h1 {
 table {
   width: 85%;
   margin: 18em auto;
-  opacity: .9;
+  opacity: .8;
 }
 
 table, th, td {
@@ -74,7 +76,8 @@ table.t01 th {
 }
 
 table.t01 tr.highlight:hover {
-  color: var(--light-grey-color);
+  color: var(--black-txt-color);
+  border-left: 2px solid var(--header-green-color);
 }
 
 .highlight {
