@@ -20,7 +20,7 @@ class SeasonDetailsTable extends Component {
     const { races } = this.state
     const { seasonWinner } = this.props
 
-    if (races === null) return <h1>Loading</h1>
+    if (races === null) return <div>Loading...</div>
 
     return (
       <div>
