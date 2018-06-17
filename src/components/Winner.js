@@ -9,5 +9,12 @@ const Winner = (props) => {
     </tr>
   )
 }
+Winner.propTypes = {
+  wonEvent: this.props,
+  driverName: this.props,
+  teamName: this.props,
+  className: this.props,
+  showSeasonDetails: this.props
+}
 
 export default Winner
