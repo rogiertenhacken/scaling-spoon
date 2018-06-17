@@ -31,9 +31,9 @@ class SeasonDetailsTable extends Component {
           </tr>
           { races.map(race => {
             const highlight = race.Results['0'].Driver.driverId === seasonWinner
-            let highLighBackground = {}
+            let highLightBackground = {}
             if (highlight) {
-              highLighBackground = {
+              highLightBackground = {
                 backgroundColor: 'yellow'
               }
             }

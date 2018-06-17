@@ -14,10 +14,10 @@ class DataTable extends Component {
       }
     }
   }
-  // set array of urls:
+
   componentDidMount () {
-    // const years = ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
-    const years = ['2005', '2006']
+    const years = ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+    // const years = ['2005', '2006', '2007']
 
     const standingPromises = years.map(year => Promise.resolve(fetch(`http://ergast.com/api/f1/${year}/driverStandings.json`)))
 
