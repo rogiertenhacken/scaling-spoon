@@ -49,7 +49,7 @@ class SeasonDetailsTable extends Component {
             })}
           </tbody>
         </table>
-        <button onClick={this.props.goBack}>back</button>
+        <button className='back' onClick={this.props.goBack}>back</button>
       </div>
     )
   }

@@ -41,7 +41,7 @@ h1.title {
   min-height: 100vh;
 }
 
-button {
+button.back {
   border: 2px solid black;
   border-radius: 5px;
   background-color: black;
@@ -54,7 +54,7 @@ button {
   margin-bottom: 10%;
 }
 
-button:hover {
+button.back:hover {
   background-color: black;
   color: var(--off-white-txt-color);
   opacity: 0.6;
