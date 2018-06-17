@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Cell } from 'react-mdl'
-import DataTable from './datatable'
+import DataTable from './DataTable'
 import '../App.css'
 
 class Landing extends Component {
