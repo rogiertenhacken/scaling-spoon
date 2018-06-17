@@ -37,7 +37,6 @@ class SeasonDetailsTable extends Component {
                 backgroundColor: 'yellow'
               }
             }
-            console.log(highlight)
             return <Winner
               key={race.raceName}
               wonEvent={race.raceName}

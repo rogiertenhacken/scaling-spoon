@@ -26,7 +26,6 @@ class DataTable extends Component {
         standingsResponses
           .map(standingsResponse => standingsResponse.json())
           .forEach(response => {
-            console.log('hello');
             response.then(data => {
               const seasonStandings = data.MRData.StandingsTable.StandingsLists[0]
               this.setState((previousState) => {
@@ -40,7 +39,6 @@ class DataTable extends Component {
   }
 
   showSeasonDetails = (season, winner) => {
-    console.log(winner);
     this.setState({ showSeasonDetailsFor: { season, winner }})
   }
 
@@ -85,7 +83,6 @@ class DataTable extends Component {
         goBack={() => this.showSeasonDetails(null, null)}
       />
     } else {
-      console.log(this.state.standings);
       return (
         <div className='App'>
           { this.renderSeasonsTable(standings) }
