@@ -17,9 +17,9 @@ class DataTable extends Component {
 
   componentDidMount () {
     const years = ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
-    //create an array of the links:
+    //create an promise object of the links:
     const standingPromises = years.map(year => Promise.resolve(fetch(`https://ergast.com/api/f1/${year}/driverStandings.json`)))
-    //use promise.all to wait to have all the fetched data loaded and use .then to do something with it.
+    //use promise.all to have all the data in standingPromises loaded and use .then to do something with it.
     Promise.all(standingPromises)
       .then(standingsResponses => {
         standingsResponses
