@@ -11,7 +11,7 @@ class SeasonDetailsTable extends Component {
   }
 
   componentDidMount () {
-    fetch(`http://ergast.com/api/f1/${this.props.season}/results/1.json`)
+    fetch(`https://ergast.com/api/f1/${this.props.season}/results/1.json`)
       .then(response => response.json())
       .then(response => this.setState({ races: response.MRData.RaceTable.Races }))
   }
